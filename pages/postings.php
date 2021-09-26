@@ -1,0 +1,1 @@
+<!-- Recruiter can view a list of all internships he/she has posted -->

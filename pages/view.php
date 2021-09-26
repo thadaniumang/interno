@@ -1,0 +1,1 @@
+<!-- Student can have a look at the details of a particular internship -->

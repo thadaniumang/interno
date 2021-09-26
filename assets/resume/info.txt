@@ -1,0 +1,2 @@
+All Resumes will be stored in this folder
+Name of pdf: <username>.pdf
