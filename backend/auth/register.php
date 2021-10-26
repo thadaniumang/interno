@@ -11,20 +11,25 @@
     }
     
     if (isset($_POST['register'])) {
+
         // Taking all values from the form
         $username =  $_REQUEST['username'];
         $email = $_REQUEST['email'];
         $password =  password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
         $name = $_REQUEST['name'];
 
-        // Query to check if a student with the same G.R. No. Exists
-        $sql = "SELECT * FROM user WHERE username=$username";
+        // Query to check if a user with the same username exists
+        $sql = "SELECT * FROM user WHERE username='$username'";
 
         $result = mysqli_query($conn, $sql);
+        $response = $result -> fetch_all();
+        $result->free();
+
+        print_r($response);
 
         // If a user already exists, we alert the user
         // Else, we insert the user in our database
-        if ($result) {
+        if ($response) {
             echo "<script>alert('User already exists');</script>";
         } else {
             // Insert Query (Creating A New Student)
