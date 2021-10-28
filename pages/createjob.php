@@ -8,7 +8,8 @@
         <form class="bg-white px-6 py-8 rounded shadow-md text-black w-full" action="../backend/auth/auth.php" method="POST">
             <h1 class="mb-8 text-3xl text-center">Create Internship</h1>
 
-            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="role" id="role" placeholder="Internship Role" />
+            <span class="border-grey-light">Internship Role</span>
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="role" id="role" placeholder="Web Developer" />
             
             <div class="my-4 border-grey-light">
                 <span>Work From Home?</span>
@@ -23,8 +24,9 @@
                     </label>
                 </div>
             </div>
-
-            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="location" id="location" placeholder="Location" />
+            
+            <span class="border-grey-light">Location</span>
+            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="location" id="location" placeholder="Mumbai" />
             
             <span class="border-grey-light">Start Date</span>
             <input type="date" class="block border border-grey-light w-full p-3 rounded mb-4" name="start_date" id="start_date" placeholder="Start Date" />
