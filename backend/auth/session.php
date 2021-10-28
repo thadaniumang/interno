@@ -1,7 +1,13 @@
 <?php
+    
+    $base = '/interno/';
 
-if (!isset($_SESSION['login']) || !$_SESSION['login']) {
-    header("Location: " . $base . "pages/login.php");
-}
+    if (session_status() != 2) {
+        session_start();
+    }
 
+    if(!isset($_SESSION['user']) || !$_SESSION['user']) {
+        header("Location: " . "$base" . "pages/login.php");
+    }
+    
 ?>
