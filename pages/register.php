@@ -1,4 +1,18 @@
-<?php include('../templates/header.php'); ?>
+<?php
+
+    $base = '/interno/';
+
+    if (session_status() != 2) {
+        session_start();
+    }
+
+    if(isset($_SESSION['user']) || $_SESSION['user']) {
+        header("Location: " . "$base" . "index.php");
+    }
+
+?>
+
+<?php include('../templates/htmlhead.php') ?>
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
@@ -22,5 +36,4 @@
     </div>
 </div>
 
-
-<?php include('../templates/footer.php'); ?>
+<?php include('../templates/htmlfoot.php') ?>

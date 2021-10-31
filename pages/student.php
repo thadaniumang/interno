@@ -1,4 +1,4 @@
-<?php include('../templates/header.php'); ?>
+<?php include('../templates/htmlhead.php') ?>
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
@@ -16,4 +16,4 @@
 </div>
 
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../templates/htmlfoot.php'); ?>
