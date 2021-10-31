@@ -1,78 +1,74 @@
 <!-- This will be a form that recruiters can fill in order to post an internship -->
 
+<?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">
-    <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+    <div class="container max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center px-2">
 
         <form class="bg-white px-6 py-8 rounded shadow-md text-black w-full" action="../backend/auth/auth.php" method="POST">
-            <h1 class="mb-8 text-3xl text-center">Create Internship</h1>
-
-            <span class="border-grey-light">Internship Role</span>
-            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="role" id="role" placeholder="Web Developer" />
+            <h1 class="mb-8 text-3xl text-center pb-6 border-b-2 border-green-500">Create Internship</h1>
             
-            <div class="my-4 border-grey-light">
-                <span>Work From Home?</span>
-                <div class="mt-1">
-                    <label class="inline-flex items-center">
-                        <input type="radio" class="form-radio" name="work_from_home" value="1">
-                        <span class="ml-2">Yes</span>
-                    </label>
-                    <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio" name="work_from_home" value="0">
-                        <span class="ml-2">No</span>
-                    </label>
+            <div class="grid grid-cols-2 gap-4 my-3">
+                <div class="col-span-1">
+                    <label for="role" class="border-grey-light ml-1">Internship Role</label>
+                    <input type="text" class="block border border-grey-light w-full p-3 mt-2 rounded mb-4" name="role" id="role" placeholder="Web Developer" />
+                </div>
+
+                <div class="col-span-1">
+                    <label for="location" class="border-grey-light ml-1">Location</label>
+                    <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="location" id="location" placeholder="Mumbai" />
                 </div>
             </div>
             
-            <span class="border-grey-light">Location</span>
-            <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="location" id="location" placeholder="Mumbai" />
-            
-            <span class="border-grey-light">Start Date</span>
-            <input type="date" class="block border border-grey-light w-full p-3 rounded mb-4" name="start_date" id="start_date" placeholder="Start Date" />
-            
-            <span class="border-grey-light">Apply By</span>
-            <input type="date" class="block border border-grey-light w-full p-3 rounded mb-4" name="apply_by" id="apply_by" placeholder="Apply By" />
-            
-            <span class="border-grey-light">Duration (Months)</span>
-            <input type="number" min="0" class="block border border-grey-light w-full p-3 rounded mb-4" name="duration" id="duration" />
-            
-            <span class="border-grey-light">Stipend (Rupees/Month)</span>
-            <input type="number" min="0" step="any" class="block border border-grey-light w-full p-3 rounded mb-4" name="stipend" id="stipend" />
-
-            <span class="border-grey-light">Internship Description</span>
-            <textarea class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="4" name="description" id="description"></textarea>
-
-            <div class="my-4 border-grey-light">
-                <span>Five days week?</span>
-                <div class="mt-1">
-                    <label class="inline-flex items-center">
-                        <input type="radio" class="form-radio" name="five_days" value="1">
-                        <span class="ml-2">Yes</span>
-                    </label>
-                    <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio" name="five_days" value="0">
-                        <span class="ml-2">No</span>
-                    </label>
+            <div class="grid grid-cols-8 gap-4 my-3">
+                <div class="col-span-3">
+                    <label for="start_date" class="border-grey-light ml-1">Start Date</label>
+                    <input type="date" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="start_date" id="start_date" placeholder="Start Date" />
                 </div>
-            </div>
-            
-            <div class="my-4 border-grey-light">
-                <span>Flexible Hours?</span>
-                <div class="mt-1">
-                    <label class="inline-flex items-center">
-                        <input type="radio" class="form-radio" name="flexible" value="1">
-                        <span class="ml-2">Yes</span>
-                    </label>
-                    <label class="inline-flex items-center ml-6">
-                        <input type="radio" class="form-radio" name="flexible" value="0">
-                        <span class="ml-2">No</span>
-                    </label>
+
+                <div class="col-span-3">
+                    <label for="apply_by" class="border-grey-light ml-1">Apply By</label>
+                    <input type="date" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="apply_by" id="apply_by" placeholder="Apply By" />
+                </div>
+
+                <div class="col-span-2">
+                    <label for="duration" class="border-grey-light ml-1">Duration (Months)</label>
+                    <input type="number" min="0" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="duration" id="duration" placeholder="6"/>
                 </div>
             </div>
 
-            <span class="border-grey-light">No. of Openings</span>
-            <input type="number" min="1" class="block border border-grey-light w-full p-3 rounded mb-4" name="openings" id="openings" />
+            <div class="grid grid-cols-2 gap-4 my-3">
+                <div class="col-span-1">
+                    <label for="stipend" class="border-grey-light ml-1">Stipend (Rupees/Month)</label>
+                    <input type="number" min="0" step="any" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="stipend" id="stipend" placeholder="50000"/>
+                </div>
+                
+                <div class="col-span-1">
+                    <label for="openings" class="border-grey-light ml-1">No. of Openings</label>
+                    <input type="number" min="1" class="block border border-grey-light w-full p-3 rounded mb-4 mt-2" name="openings" id="openings" placeholder="10"/>
+                </div>
+            </div>
+
+            <label for="description" class="border-grey-light mt-3 ml-1">Internship Description</label>
+            <textarea class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none mb-3 mt-2" rows="4" name="description" id="description"></textarea>
+
+            <div class="grid grid-cols-3 gap-4 my-3">
+                <div class="grid-cols-1">
+                    <input type="checkbox" class="mr-2" name="work_from_home" id="work_from_home" value="true">
+                    <label for="work_from_home" class="mb-1">Work From Home?</label>
+                </div>
+
+                <div class="grid-cols-1">
+                    <input type="checkbox" class="mr-2" name="five_days" id="five_days" value="true">
+                    <label for="five_days" class="mb-1">Five days week?</label>
+                </div>
+
+                <div class="grid-cols-1">
+                    <input type="checkbox" class="mr-2" name="flexible" id="flexible" value="true">
+                    <label for="flexible" class="mb-1">Flexible Hours?</label>
+                </div>
+            </div>
             
             <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="createjob" id="createjob" value="Create Internship">
         </form>
@@ -81,3 +77,4 @@
 </div>
 
 <?php include('../templates/footer.php'); ?>
+<?php include('../templates/htmlfoot.php') ?>
