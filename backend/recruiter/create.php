@@ -4,11 +4,19 @@
     
     if (isset($_POST['create'])) {
 
+        session_start();
+
+        $username = $_SESSION['username'];
+
+        $sql = "SELECT uuid FROM user WHERE username='$username'";
+        $result = mysqli_query($conn, $sql);
+        $user = mysqli_fetch_assoc($result);
+        $user_id = $user['uuid'];
+        
         // Taking all values from the form
-        $user =  $_REQUEST['user'];
         $phone = $_REQUEST['phone'];
         $company =  $_REQUEST['company'];
-        $company_url = $_REQUEST['url'];
+        $company_url = $_REQUEST['company_url'];
         
         // Insert Query (Creating A New Recruiter)
         $sql = "INSERT INTO recruiter(user_id, phone, company, company_url) 
