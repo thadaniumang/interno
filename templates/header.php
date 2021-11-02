@@ -23,7 +23,7 @@
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/interno/backend/auth/logout.php?logout=true">Log Out</a></li>
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="#">About</a></li>
+                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="https://github.com/thadaniumang/interno" target="_blank">About</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,7 +38,7 @@
                 <a class="inline-block no-underline hover:text-black mx-2" href="#" title="Profile">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                 </a>
-                <a class="inline-block no-underline hover:text-black mx-2" href="#" title="Internships">
+                <a class="inline-block no-underline hover:text-black mx-2" href="/interno/pages/postings.php" title="Internships">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path></svg>
                 </a>
             </div>
