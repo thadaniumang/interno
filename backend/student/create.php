@@ -1,12 +1,20 @@
 <?php
     
     include('../../config/db_connect.php');
-    include('../resumes/upload.php');
+    // include('../resumes/upload.php');
     
     if (isset($_POST['create'])) {
 
+        session_start();
+
+        $username = $_SESSION['username'];
+
+        $sql = "SELECT uuid FROM user WHERE username='$username'";
+        $result = mysqli_query($conn, $sql);
+        $user = mysqli_fetch_assoc($result);
+        $user_id = $user['uuid'];
+
         // Taking all values from the form
-        $user_id =  $_REQUEST['user_id'];
         $degree = $_REQUEST['degree'];
         $grad_year =  $_REQUEST['grad_year'];
         $dob = $_REQUEST['dob'];
@@ -16,8 +24,28 @@
         $sql = "SELECT name FROM user WHERE uuid=$user_id";
         $result = mysqli_query($conn, $sql);
         $student = mysqli_fetch_assoc($result);
+
+        if (($_FILES['resume']['name']!="")) {
+
+            // Where the file is going to be stored
+            $target_dir = "../../assets/resume/";
+            $file = $_FILES['resume']['name'];
+            $path = pathinfo($file);
+            $filename = $username;
+            $ext = $path['extension'];
+            $temp_name = $_FILES['resume']['tmp_name'];
+            $resume_link = $target_dir.$filename.".".$ext;
+             
+            // Check if file already exists
+            if (file_exists($resume_link)) {
+                echo "Sorry, file already exists.";
+            } else {
+                move_uploaded_file($temp_name, $resume_link);
+                echo "Congratulations! File Uploaded Successfully.";
+            }
+        }
         
-        $resume_link = uploadPDF($_FILES['resume'], $student['username']);
+        // $resume_link = uploadPDF($_FILES['resume'], $student['username']);
 
         // Insert Query (Creating A New Student)
         $sql = "INSERT INTO student(user_id, degree, grad_year, dob, resume_link, college, major) 

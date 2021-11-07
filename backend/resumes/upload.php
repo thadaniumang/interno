@@ -6,7 +6,7 @@
         if ( isset( $resume ) ) {
             if ($resume['type'] == "application/pdf") {
                 $source_file = $resume['tmp_name'];
-                $dest_file = "/interno/assets/upload/" . $username;
+                $dest_file = "/interno/assets/resume/" . $username;
 
                 move_uploaded_file( $source_file, $dest_file ) or die ("Error!!");
 
