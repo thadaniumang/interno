@@ -75,6 +75,9 @@
 
             <label for="skills" class="border-grey-light">Skills</label>
             <input type="text" value="HTML,CSS,JavaScript,React" data-role="tagsinput" name="skills" id="skills" />
+
+            <label for="questions" class="border-grey-light">Assessment Questions</label>
+            <input type="text" value="Why should we hire you?,Will you be available for the given duration of the internship?" data-role="tagsinput" name="questions" id="questions" />
             
             <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="create" id="create" value="Create Internship">
         </form>
