@@ -2,11 +2,14 @@
 
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">
     <div class="container max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center px-2">
 
-        <form class="bg-white px-6 py-8 rounded shadow-md text-black w-full" action="../backend/auth/auth.php" method="POST">
+        <form class="bg-white px-6 py-8 rounded shadow-md text-black w-full" action="../backend/internships/create.php" method="POST">
             <h1 class="mb-8 text-3xl text-center pb-6 border-b-2 border-green-500">Create Internship</h1>
             
             <div class="grid grid-cols-2 gap-4 my-3">
@@ -69,12 +72,18 @@
                     <label for="flexible" class="mb-1">Flexible Hours?</label>
                 </div>
             </div>
+
+            <label for="skills" class="border-grey-light">Skills</label>
+            <input type="text" value="HTML,CSS,JavaScript,React" data-role="tagsinput" name="skills" id="skills" />
             
-            <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="createjob" id="createjob" value="Create Internship">
+            <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="create" id="create" value="Create Internship">
         </form>
         
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 <?php include('../templates/footer.php'); ?>
 <?php include('../templates/htmlfoot.php') ?>

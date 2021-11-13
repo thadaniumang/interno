@@ -1,4 +1,3 @@
-<?php include('./backend/auth/session.php'); ?>
 <?php include('./templates/htmlhead.php') ?>
 <?php include('./templates/header.php'); ?>
 

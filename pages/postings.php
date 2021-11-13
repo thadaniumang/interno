@@ -8,6 +8,8 @@
             <div id="features" class="w-full px-6 py-1">
                 <h3 class="uppercase tracking-wide font-bold text-gray-800 text-xl">Postings</h3>
             </div>
+            <button onclick="window.location.href='createjob.php'">Click me</button>
+
 
             <div class="bg-gray-100">
                 <div class="mx-auto px-8 py-8">
