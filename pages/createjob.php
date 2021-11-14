@@ -1,5 +1,5 @@
 <!-- This will be a form that recruiters can fill in order to post an internship -->
-
+<?php include('../backend/auth/session.php'); ?>
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
