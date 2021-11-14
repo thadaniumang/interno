@@ -48,12 +48,24 @@
         $description =  $_REQUEST['description'];
         $openings = $_REQUEST['openings'];
 
-        // Insert Query (Creating A New Student)
+        $skills = explode(",", $_REQUEST['skills']);
+        $questions = explode(",", $_REQUEST['questions']);
+
+        // Insert Query (Creating A New Internship)
         $sql3 = "INSERT INTO internships(role, recruiter, work_from_home, location, start_date, duration, stipend, apply_by, description, five_days, flexible, openings) 
             VALUES ('$role', $recruiter, $work_from_home, '$location', '$start_date', $duration, $stipend, '$apply_by', '$description', $five_days, $flexible, $openings)";
         
         // Executing a query
         if (mysqli_query($conn, $sql3)) {
+            $internship_id = mysqli_insert_id($conn);
+            foreach ($skills as $skill) {
+                $skillsql = "INSERT INTO skills(internship_id, skill) VALUES($internship_id, '$skill')";
+                mysqli_query($conn, $skillsql);
+            }
+            foreach ($questions as $question) {
+                $quessql = "INSERT INTO questions(internship_id, question) VALUES($internship_id, '$question')";
+                mysqli_query($conn, $quessql);
+            }
             header('Location: ../../pages/postings.php');
         } else{
             echo "ERROR: Hush! Sorry $sql. " 

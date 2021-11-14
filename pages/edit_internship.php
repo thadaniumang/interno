@@ -3,11 +3,25 @@
     include('../config/db_connect.php');
 
     $internship_id = $_GET['internship_to_edit'];
-    $sql = "SELECT * FROM internships WHERE internship_id = '$internship_id'";
+    $sql1 = "SELECT * FROM internships WHERE internship_id = '$internship_id'";
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql1);
     
     $internship = mysqli_fetch_assoc($result);
+
+    $sql2 = "SELECT skill FROM skills WHERE internship_id='$internship_id'";
+    $result = mysqli_query($conn, $sql2);
+    $skills = array_merge(...mysqli_fetch_all($result));
+
+    $skills_str = join(",", $skills);
+
+    echo "<br>";
+
+    $sql3 = "SELECT question FROM questions WHERE internship_id='$internship_id'";
+    $result = mysqli_query($conn, $sql3);
+    $questions = array_merge(...mysqli_fetch_all($result));
+    
+    $questions_str = join(",", $questions);
 
     mysqli_free_result($result);
 
@@ -88,10 +102,10 @@
             </div>
 
             <label for="skills" class="border-grey-light">Skills</label>
-            <input type="text" value="HTML,CSS,JavaScript,React" data-role="tagsinput" name="skills" id="skills" />
+            <input type="text" value="<?php echo $skills_str ?>" data-role="tagsinput" name="skills" id="skills" />
 
             <label for="questions" class="border-grey-light">Assessment Questions</label>
-            <input type="text" value="Why should we hire you?,Will you be available for the given duration of the internship?" data-role="tagsinput" name="questions" id="questions" />
+            <input type="text" value="<?php echo $questions_str ?>" data-role="tagsinput" name="questions" id="questions" />
             
             <input type="hidden" name="internship_to_edit" id="internship_to_edit" value="<?php echo $internship['internship_id']?>">
             <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="update" id="update" value="Update Internship">
