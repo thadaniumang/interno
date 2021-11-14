@@ -17,9 +17,11 @@
         // Taking all values from the form
         $degree = $_REQUEST['degree'];
         $grad_year =  $_REQUEST['grad_year'];
-        $dob = $_REQUEST['dob'];
         $college = $_REQUEST['college'];
         $major =  $_REQUEST['major'];
+
+        $raw_dob = htmlentities($_REQUEST['dob']);
+        $dob = date('Y-m-d', strtotime($raw_dob));
 
         $sql = "SELECT name FROM user WHERE uuid=$user_id";
         $result = mysqli_query($conn, $sql);
@@ -49,7 +51,7 @@
 
         // Insert Query (Creating A New Student)
         $sql = "INSERT INTO student(user_id, degree, grad_year, dob, resume_link, college, major) 
-            VALUES ($user_id, '$degree', $grad_year, $dob, '$resume_link', '$college', '$major')";
+            VALUES ($user_id, '$degree', $grad_year, '$dob', '$resume_link', '$college', '$major')";
         
         // Executing a query
         if (mysqli_query($conn, $sql)) {

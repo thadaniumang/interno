@@ -21,7 +21,7 @@
     $result3 = mysqli_query($conn, $sql3);
     $internships = [];
 
-    if ($result) {
+    if ($result3) {
         $internships = mysqli_fetch_all($result3, MYSQLI_ASSOC);
         mysqli_free_result($result3);
     }

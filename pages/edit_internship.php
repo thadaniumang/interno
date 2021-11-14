@@ -101,11 +101,11 @@
                 </div>
             </div>
 
-            <label for="skills" class="border-grey-light">Skills</label>
-            <input type="text" value="<?php echo $skills_str ?>" data-role="tagsinput" name="skills" id="skills" />
+            <label for="skills" class="border-grey-light">Skills</label><br/>
+            <input type="text" value="<?php echo $skills_str ?>" data-role="tagsinput" name="skills" id="skills" /><br/>
 
-            <label for="questions" class="border-grey-light">Assessment Questions</label>
-            <input type="text" value="<?php echo $questions_str ?>" data-role="tagsinput" name="questions" id="questions" />
+            <label for="questions" class="border-grey-light">Assessment Questions</label><br/>
+            <input type="text" value="<?php echo $questions_str ?>" data-role="tagsinput" name="questions" id="questions" /><br/>
             
             <input type="hidden" name="internship_to_edit" id="internship_to_edit" value="<?php echo $internship['internship_id']?>">
             <input type="submit" class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" name="update" id="update" value="Update Internship">
