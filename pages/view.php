@@ -73,7 +73,7 @@
     <?php } ?>
     <hr>
     <div class="text-center text-white mt-8 mb-16">
-        <a href="#" class="btn bg-green-500 rounded-full px-8 py-3">Apply</a>
+        <a href="./assessment.php?internship_id=<?php echo $internship_id; ?>" class="btn bg-green-500 rounded-full px-8 py-3">Apply</a>
     </div>
 </div>
 
