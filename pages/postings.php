@@ -28,10 +28,13 @@
 ?>
     <section class="bg-white py-4">
         <div class="container mx-auto pt-6">
-            <div id="features" class="w-full px-6 py-1">
-                <h3 class="uppercase tracking-wide font-bold text-gray-800 text-xl">Postings</h3>
+
+            <div class="flex flex-row justify-between pr-8">
+                <div id="features" class="ml-3 px-6 py-1">
+                    <h3 class="uppercase tracking-wide font-bold text-gray-800 text-xl">Postings</h3>
+                </div>
+                <button class="text-center py-3 px-5 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" onclick="window.location.href='createjob.php'">Post New Internship</button>
             </div>
-            <button class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1" onclick="window.location.href='createjob.php'">Post New Internship</button>
 
 
             <div class="bg-gray-100">
