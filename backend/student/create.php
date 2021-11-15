@@ -30,14 +30,17 @@
         if (($_FILES['resume']['name']!="")) {
 
             // Where the file is going to be stored
-            $target_dir = "../assets/resume/";
+            $target_dir = "../../assets/resume/";
             $file = $_FILES['resume']['name'];
             $path = pathinfo($file);
             $filename = $username;
             $ext = $path['extension'];
             $temp_name = $_FILES['resume']['tmp_name'];
             $resume_link = $target_dir.$filename.".".$ext;
-             
+
+            $dir = "../assets/resume/";
+            $db_link =  $dir.$filename.".".$ext;
+
             // Check if file already exists
             if (file_exists($resume_link)) {
                 echo "Sorry, file already exists.";
@@ -51,7 +54,7 @@
 
         // Insert Query (Creating A New Student)
         $sql = "INSERT INTO student(user_id, degree, grad_year, dob, resume_link, college, major) 
-            VALUES ($user_id, '$degree', $grad_year, '$dob', '$resume_link', '$college', '$major')";
+            VALUES ($user_id, '$degree', $grad_year, '$dob', '$db_link', '$college', '$major')";
         
         // Executing a query
         if (mysqli_query($conn, $sql)) {
