@@ -25,6 +25,7 @@
         $internships = mysqli_fetch_all($result3, MYSQLI_ASSOC);
         mysqli_free_result($result3);
     }
+
 ?>
     <section class="bg-white py-4">
         <div class="container mx-auto pt-6">
@@ -89,7 +90,23 @@
                                         <span class="font-bold font-thin text-xs text-gray-700 uppercase sm:hidden absolute top-0 inset-x-0 p-1 bg-gray-300 pl-2">
                                             Applications
                                         </span>
-                                        <?php echo "TODO"?>
+                                        <form action="../pages/applicants.php" method="GET">
+                                            <?php
+                                                $i_id = $internship['internship_id'];
+                                                $sql4 = "SELECT * FROM applications WHERE internship_id='$i_id'";
+                                                $result4 = mysqli_query($conn, $sql4);
+                                                $applications = [];
+
+                                                if ($result4) {
+                                                    $applications = mysqli_fetch_all($result4, MYSQLI_ASSOC);
+                                                    mysqli_free_result($result4);
+                                                }
+                                                echo count($applications);
+                                            ?>
+                                        
+                                            <input type="hidden" name="internship_id" id="internship_id" value="<?php echo $internship['internship_id']?>">
+                                            <input type="submit" value="View" name="view" class="bg-green-500 text-white hover:bg-green-600 focus:outline-none py-1 px-4 rounded">
+                                        </form>
                                     </td>
                                     <td class="pt-8 sm:py-2 pb-2 sm:text-center relative w-2/4 sm:w-1/6 border-t border-l sm:border-l-0 border-gray-400">
                                         <form action="../pages/edit_internship.php" method="GET">

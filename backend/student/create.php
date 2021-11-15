@@ -30,7 +30,7 @@
         if (($_FILES['resume']['name']!="")) {
 
             // Where the file is going to be stored
-            $target_dir = "../../assets/resume/";
+            $target_dir = "../assets/resume/";
             $file = $_FILES['resume']['name'];
             $path = pathinfo($file);
             $filename = $username;
