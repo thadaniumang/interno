@@ -22,7 +22,11 @@
             <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
                 <nav>
                     <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                        <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/interno/backend/auth/logout.php?logout=true">Log Out</a></li>
+                        <?php if ($_SESSION['username']) { ?>
+                            <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/interno/backend/auth/logout.php?logout=true">Log Out</a></li>
+                        <?php } else { ?>
+                            <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="/interno/pages/login.php">Log In</a></li>
+                        <?php } ?>
                         <li><a class="inline-block no-underline hover:text-black hover:underline py-2 px-4" href="https://github.com/thadaniumang/interno" target="_blank">About</a></li>
                     </ul>
                 </nav>
@@ -33,7 +37,6 @@
                     <img src="/interno/assets/images/logo.png" alt="Interno" class="h-20">
                 </a>
             </div>
-
             <div class="order-2 md:order-3 flex items-center" id="nav-content">
                 <a class="inline-block no-underline hover:text-black mx-2" href="#" title="Profile">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>

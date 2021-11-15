@@ -20,27 +20,27 @@
         $role = $_REQUEST['role'];
 
         if ($stipend and $duration and strlen($role) > 0) {
-            $sql = "SELECT * FROM internships WHERE stipend>$stipend AND duration<$duration AND role='$role'";
+            $sql = "SELECT * FROM internships WHERE stipend>=$stipend AND duration<=$duration AND role='$role'";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if ($stipend and $duration and !strlen($role) > 0) {
-            $sql = "SELECT * FROM internships WHERE stipend>$stipend AND duration<$duration";
+            $sql = "SELECT * FROM internships WHERE stipend>=$stipend AND duration<=$duration";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if ($stipend and !$duration and strlen($role) > 0) {
-            $sql = "SELECT * FROM internships WHERE stipend>$stipend AND role='$role'";
+            $sql = "SELECT * FROM internships WHERE stipend>=$stipend AND role='$role'";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if (!$stipend and $duration and strlen($role) > 0) {
-            $sql = "SELECT * FROM internships WHERE role=$role AND duration<$duration";
+            $sql = "SELECT * FROM internships WHERE role=$role AND duration<=$duration";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if ($stipend) {
-            $sql = "SELECT * FROM internships WHERE stipend>$stipend";
+            $sql = "SELECT * FROM internships WHERE stipend>=$stipend";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if ($duration) {
-            $sql = "SELECT * FROM internships WHERE duration<$duration";
+            $sql = "SELECT * FROM internships WHERE duration<=$duration";
             $result = mysqli_query($conn, $sql);
             $internships = mysqli_fetch_all($result);
         } else if (strlen($role) > 0) {
