@@ -2,7 +2,6 @@ composer.phar
 /vendor/
 package-lock.json
 composer.lock
-/build/
 /node_modules/
 /assets/resume/*
 
