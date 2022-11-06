@@ -1,7 +1,8 @@
+<?php include('./backend/auth/session.php'); ?>
 <?php include('./templates/htmlhead.php') ?>
 <?php include('./templates/header.php'); ?>
 
-    <section class="w-full mx-auto flex pt-12 md:pt-0 md:items-center bg-cover bg-right max-w-screen-2xl" style="height: 32rem; background-image: url('/interno/assets/images/banner.jpg');">
+    <section class="w-full mx-auto flex pt-12 md:pt-0 md:items-center bg-cover bg-right max-w-screen-2xl" style="height: 32rem; background-image: url('/assets/images/banner.jpg');">
         <div class="container mx-auto">
             <div class="flex flex-col w-full justify-end items-end px-6">
                 <h1 class="text-gray-800 text-2xl my-4 w-1/2 md:w-1/3 text-right leading-10 bg-gray-100 p-4 shadow-lg capitalize"><a href="./pages/register.php">Find / Offer Internships in a few easy steps</a></h1>

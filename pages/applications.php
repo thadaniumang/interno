@@ -36,7 +36,7 @@
                 <div class="mx-auto px-8 py-8">
                     <table class="sm:shadow border-collapse w-full">
                         <thead class="sm:visible invisible absolute sm:relative">
-                            <tr class="border-t-2 border-gray-400 sm:flex sm:inline-block">
+                            <tr class="border-t-2 border-gray-400 sm:inline-block">
                                 <th class="text-gray-700 capitalize px-4 py-4 sm:w-1/5">ID</th>
                                 <th class="text-gray-700 capitalize px-4 py-4 sm:w-1/5">Role</th>
                                 <th class="text-gray-700 capitalize px-4 py-4 sm:w-1/5">Stipend</th>

@@ -5,6 +5,31 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
+<?php
+    include('../config/db_connect.php');
+
+    $username = $_SESSION['username'];
+
+    $sql = "SELECT uuid FROM user WHERE username='$username'";
+    $result = mysqli_query($conn, $sql);
+    $user = mysqli_fetch_assoc($result);
+    $user_id = $user['uuid'];
+
+    $flag = "";
+    $sql = "SELECT * FROM student WHERE user_id=$user_id";
+    $result = mysqli_query($conn, $sql);
+    
+    if ($result) {
+        $student = mysqli_fetch_assoc($result);
+        if ($student && count($student) > 0) {
+            $flag .= "student";
+        }
+    }
+
+    if ($flag == "student") {
+        header('Location: ./applications.php');
+    }
+?>
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">
     <div class="container max-w-4xl mx-auto flex-1 flex flex-col items-center justify-center px-2">

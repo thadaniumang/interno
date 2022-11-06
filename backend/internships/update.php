@@ -1,5 +1,4 @@
 <?php
-    
     include('../../config/db_connect.php');
           
     $raw_apply_by = htmlentities($_REQUEST['apply_by']);

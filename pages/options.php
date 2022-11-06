@@ -2,7 +2,7 @@
 <?php include('../templates/htmlhead.php') ?>
 
 <?php
-
+    
     include('../config/db_connect.php');
 
     $username = $_SESSION['username'];

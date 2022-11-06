@@ -1,15 +1,14 @@
 <?php
-
-    $base = '/interno/';
+    // $base = "interno/";
+    $base = "";
 
     if (session_status() != 2) {
         session_start();
     }
 
     if(isset($_SESSION['user'])) {
-        header("Location: " . "$base" . "index.php");
+        header("Location: /" . "$base" . "index.php");
     }
-
 ?>
 
 <?php include('../templates/htmlhead.php') ?>

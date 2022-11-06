@@ -1,5 +1,4 @@
 <?php
-
     include('../../config/db_connect.php');
 
     $internship_id = $_REQUEST['internship_to_delete'];
@@ -13,7 +12,6 @@
         echo "ERROR: Hush! Sorry $sql. " 
             . mysqli_error($conn);
     }
-
 
     mysqli_close($conn);
 ?>

@@ -12,6 +12,21 @@
     $user = mysqli_fetch_assoc($result);
     $user_id = $user['uuid'];
 
+    $flag = "";
+    $sql = "SELECT * FROM student WHERE user_id=$user_id";
+    $result = mysqli_query($conn, $sql);
+    
+    if ($result) {
+        $student = mysqli_fetch_assoc($result);
+        if ($student && count($student) > 0) {
+            $flag .= "student";
+        }
+    }
+
+    if ($flag == "student") {
+        header('Location: ./applications.php');
+    }
+
     $sql2 = "SELECT recruiter_id FROM recruiter WHERE user_id='$user_id'";
     $result2 = mysqli_query($conn, $sql2);
     $company = mysqli_fetch_assoc($result2);

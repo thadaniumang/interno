@@ -1,5 +1,4 @@
 <?php
-    
     include('../../config/db_connect.php');
     
     // If the user session already exists, we set validUser to true
