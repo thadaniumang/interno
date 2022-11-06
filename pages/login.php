@@ -11,6 +11,7 @@
     }
 ?>
 
+<?php error_reporting(0); ?>
 <?php include('../templates/htmlhead.php') ?>
 
 <div class="bg-grey-lighter min-h-screen flex flex-col">

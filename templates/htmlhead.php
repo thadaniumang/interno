@@ -1,7 +1,6 @@
 <?php 
     // $base = "interno/";
     $base = "";
-    
 ?>
 
 <!DOCTYPE html>

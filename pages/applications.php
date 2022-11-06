@@ -1,4 +1,5 @@
 <!-- Student can view all of their applications here -->
+<?php error_reporting(0); ?>
 <?php include('../backend/auth/session.php'); ?>
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
