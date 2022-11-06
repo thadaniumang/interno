@@ -28,7 +28,8 @@
     mysqli_close($conn);
 ?>
 
-<?php error_reporting(0); ?>
+<?php ob_start();
+error_reporting(0);  ?>
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">

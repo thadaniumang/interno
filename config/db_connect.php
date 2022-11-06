@@ -5,7 +5,8 @@
     // $password = "";
     // $dbname = "interno";
 
-    error_reporting(0);
+    ob_start();
+error_reporting(0); 
     $database = getenv('MYSQLDATABASE');
     $hostname = getenv('MYSQLHOST');
     $username = "root";

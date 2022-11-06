@@ -1,5 +1,6 @@
 <!-- Student can view the list of internships over here -->
-<?php error_reporting(0); ?>
+<?php ob_start();
+error_reporting(0);  ?>
 <?php include('../backend/auth/session.php'); ?>
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>

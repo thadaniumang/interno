@@ -1,5 +1,6 @@
 <!-- This will be a form that recruiters can fill in order to post an internship -->
-<?php error_reporting(0); ?>
+<?php ob_start();
+error_reporting(0);  ?>
 <?php include('../backend/auth/session.php'); ?>
 <?php include('../templates/htmlhead.php') ?>
 <?php include('../templates/header.php'); ?>
